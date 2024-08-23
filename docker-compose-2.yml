@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ark0se:
+    image: lanqian528/funcaptcha_solver:latest
+    container_name: funcaptcha_solver
+    restart: unless-stopped
+    ports:
+      - '5006:5006'
+    environment:
+      - TZ=Asia/Shanghai # 设置时区
