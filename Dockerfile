@@ -1,11 +1,11 @@
-FROM python:3.11-slim
+FROM lanqian528/funcaptcha_solver:latest
 
-WORKDIR /app
+# Set the time zone
+ENV TZ=Asia/Shanghai
 
-COPY . /app
+# Expose the port
+EXPOSE 5006
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-EXPOSE 5005
-
-CMD ["python", "app.py"]
+# The CMD instruction is not needed as it's likely already defined in the base image
+# If you need to override the command, you can uncomment and modify the following line:
+# CMD ["your_command_here"]
